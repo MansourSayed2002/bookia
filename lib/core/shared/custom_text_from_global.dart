@@ -1,0 +1,43 @@
+import 'package:bookia/core/theme/color_app.dart';
+import 'package:bookia/core/theme/textstyle_app.dart';
+import 'package:flutter/material.dart';
+
+class CustomTextFromGlobal extends StatelessWidget {
+  const CustomTextFromGlobal({
+    super.key,
+    required this.hinttext,
+    this.suffixIcon,
+  });
+  final String hinttext;
+  final Widget? suffixIcon;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 12.0),
+      width: double.infinity,
+      height: 56.0,
+      child: TextFormField(
+        cursorColor: ColorApp.primery,
+        decoration: InputDecoration(
+          suffixIcon: suffixIcon,
+          filled: true,
+          fillColor: ColorApp.second,
+          hintText: hinttext,
+          hintStyle: TextstyleApp.black15W400.copyWith(color: ColorApp.grey),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: ColorApp.border),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: ColorApp.primery),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: ColorApp.border),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
+      ),
+    );
+  }
+}
