@@ -1,7 +1,7 @@
 import 'package:bookia/core/constants/image_app.dart';
 import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
-import 'package:bookia/view/widget/auth/custom_card_social.dart';
+import 'package:bookia/feature/auth/presentation/widget/custom_card_social.dart';
 import 'package:flutter/material.dart';
 
 class CustomLogSocial extends StatelessWidget {

@@ -4,9 +4,9 @@ import 'package:bookia/core/extensions/navigator_app.dart';
 import 'package:bookia/core/shared/custom_elevated_button_global.dart';
 import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
-import 'package:bookia/view/screen/auth/login_view.dart';
-import 'package:bookia/view/screen/auth/register_view.dart';
-import 'package:bookia/view/widget/onboarding/show_logo.dart';
+import 'package:bookia/feature/auth/presentation/screen/login_view.dart';
+import 'package:bookia/feature/auth/presentation/screen/register_view.dart';
+import 'package:bookia/feature/intro/presentation/widget/show_logo.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatelessWidget {

@@ -7,9 +7,9 @@ import 'package:bookia/core/shared/custom_elevated_button_global.dart';
 import 'package:bookia/core/shared/custom_text_from_global.dart';
 import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
-import 'package:bookia/view/screen/auth/forget_password_view.dart';
-import 'package:bookia/view/screen/auth/register_view.dart';
-import 'package:bookia/view/widget/auth/custom_log_social.dart';
+import 'package:bookia/feature/auth/presentation/screen/forget_password_view.dart';
+import 'package:bookia/feature/auth/presentation/screen/register_view.dart';
+import 'package:bookia/feature/auth/presentation/widget/custom_log_social.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

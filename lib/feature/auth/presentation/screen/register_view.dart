@@ -6,8 +6,8 @@ import 'package:bookia/core/shared/custom_elevated_button_global.dart';
 import 'package:bookia/core/shared/custom_text_from_global.dart';
 import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
-import 'package:bookia/view/screen/auth/login_view.dart';
-import 'package:bookia/view/widget/auth/custom_log_social.dart';
+import 'package:bookia/feature/auth/presentation/screen/login_view.dart';
+import 'package:bookia/feature/auth/presentation/widget/custom_log_social.dart';
 import 'package:flutter/material.dart';
 
 class RegisterView extends StatelessWidget {
