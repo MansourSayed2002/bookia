@@ -8,6 +8,7 @@ import 'package:bookia/feature/auth/presentation/screen/login_view.dart';
 import 'package:bookia/feature/auth/presentation/screen/register_view.dart';
 import 'package:bookia/feature/intro/presentation/widget/show_logo.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -29,11 +30,11 @@ class OnboardingView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 60.0),
+              Spacer(flex: 2),
               ShowLogo(),
-              SizedBox(height: 25.0),
-              Text(TextApp.titleOnboarding, style: TextstyleApp.black20W400),
-              SizedBox(height: 320.0),
+              Gap(15.0),
+              Text(TextApp.titleOnboarding, style: TextstyleApp.black18W400),
+              Spacer(flex: 5),
               CustomElevatedButtonGlobal(
                 backgroundcolor: ColorApp.primery,
                 colorTitle: ColorApp.white,
@@ -42,7 +43,7 @@ class OnboardingView extends StatelessWidget {
                   context.push(LoginView());
                 },
               ),
-              SizedBox(height: 15.0),
+              Gap(15.0),
               CustomElevatedButtonGlobal(
                 backgroundcolor: ColorApp.white,
                 colorborder: ColorApp.black,
@@ -51,6 +52,7 @@ class OnboardingView extends StatelessWidget {
                   context.push(RegisterView());
                 },
               ),
+              Spacer(flex: 1),
             ],
           ),
         ),

@@ -4,5 +4,6 @@ class ImageApp {
   static const String face = "asset/image/facebook_ic.svg";
   static const String apple = "asset/image/cib_apple.svg";
   static const String google = "asset/image/Group 123.svg";
-  static const String logo = "asset/image/book.svg";
+  static const String logo = "asset/image/logo.svg";
+  static const String stricker = "asset/image/Sticker.svg";
 }

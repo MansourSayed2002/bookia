@@ -2,8 +2,13 @@ import 'package:bookia/core/theme/color_app.dart';
 import 'package:flutter/widgets.dart';
 
 class TextstyleApp {
-  static TextStyle black20W400 = TextStyle(
-    fontSize: 20.0,
+  static TextStyle black18W400 = TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w400,
+    color: ColorApp.black,
+  );
+  static TextStyle black30W400 = TextStyle(
+    fontSize: 30.0,
     fontWeight: FontWeight.w400,
     color: ColorApp.black,
   );
@@ -17,7 +22,7 @@ class TextstyleApp {
     fontWeight: FontWeight.w400,
     color: ColorApp.black,
   );
-  static TextStyle darkGrey14W400 = TextStyle(
+  static TextStyle grey14W400 = TextStyle(
     fontSize: 14.0,
     fontWeight: FontWeight.w400,
     color: ColorApp.darkGrey,

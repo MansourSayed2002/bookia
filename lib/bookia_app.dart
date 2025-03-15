@@ -1,4 +1,4 @@
-import 'package:bookia/feature/intro/presentation/screen/onboarding_view.dart';
+import 'package:bookia/feature/auth/presentation/screen/congratulation_view.dart';
 import 'package:flutter/material.dart';
 
 class BookiaApp extends StatelessWidget {
@@ -9,7 +9,7 @@ class BookiaApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: "dm"),
       debugShowCheckedModeBanner: false,
-      home: OnboardingView(),
+      home: CongratulationView(),
     );
   }
 }

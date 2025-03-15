@@ -6,6 +6,7 @@ import 'package:bookia/core/shared/custom_elevated_button_global.dart';
 import 'package:bookia/core/shared/custom_text_from_global.dart';
 import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
+import 'package:bookia/feature/auth/presentation/screen/check_verifycode_view.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordView extends StatelessWidget {
@@ -32,20 +33,19 @@ class CustomBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          TextApp.forgetPassword,
-          style: TextstyleApp.black15W400.copyWith(fontSize: 30.0),
-        ),
+        Text(TextApp.forgetPassword, style: TextstyleApp.black30W400),
         SizedBox(height: 10.0),
         Text(
           TextApp.titleforget,
-          style: TextstyleApp.darkGrey14W400.copyWith(fontSize: 16.0),
+          style: TextstyleApp.grey14W400.copyWith(fontSize: 16.0),
         ),
         SizedBox(height: 30.0),
         CustomTextFromGlobal(hinttext: TextApp.enterYourEmail),
         SizedBox(height: 30.0),
         CustomElevatedButtonGlobal(
-          onatp: () {},
+          onatp: () {
+            context.push(CheckVerifycodeView());
+          },
           backgroundcolor: ColorApp.primery,
           colorTitle: ColorApp.white,
           title: TextApp.sendCode,

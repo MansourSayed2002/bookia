@@ -3,6 +3,7 @@ import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
 import 'package:bookia/feature/auth/presentation/widget/custom_card_social.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class CustomLogSocial extends StatelessWidget {
   const CustomLogSocial({super.key, required this.title});
@@ -14,12 +15,12 @@ class CustomLogSocial extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            VerticalDivider(width: 112, color: ColorApp.border),
-            Text(title, style: TextstyleApp.darkGrey14W400),
-            VerticalDivider(width: 112, color: ColorApp.border),
+            Expanded(child: Divider(color: ColorApp.border)),
+            Text(title, style: TextstyleApp.grey14W400),
+            Expanded(child: Divider(color: ColorApp.border)),
           ],
         ),
-        SizedBox(height: 14.0),
+        Gap(14.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

@@ -36,10 +36,7 @@ class CustomBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Text(
-          TextApp.titleLogIn,
-          style: TextstyleApp.black20W400.copyWith(fontSize: 30.0),
-        ),
+        Text(TextApp.titleLogIn, style: TextstyleApp.black30W400),
         SizedBox(height: 32.0),
         CustomTextFromGlobal(hinttext: TextApp.username),
         CustomTextFromGlobal(
@@ -55,10 +52,7 @@ class CustomBody extends StatelessWidget {
             onPressed: () {
               context.push(ForgetPasswordView());
             },
-            child: Text(
-              TextApp.forgetPassword,
-              style: TextstyleApp.darkGrey14W400,
-            ),
+            child: Text(TextApp.forgetPassword, style: TextstyleApp.grey14W400),
           ),
         ),
         CustomElevatedButtonGlobal(

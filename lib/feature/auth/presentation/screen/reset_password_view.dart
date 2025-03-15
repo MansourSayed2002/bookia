@@ -1,18 +1,15 @@
 import 'package:bookia/core/constants/text_app.dart';
-import 'package:bookia/core/extensions/navigator_app.dart';
 import 'package:bookia/core/shared/custom_another_page_global.dart';
 import 'package:bookia/core/shared/custom_button_back_global.dart';
 import 'package:bookia/core/shared/custom_elevated_button_global.dart';
 import 'package:bookia/core/shared/custom_text_from_global.dart';
 import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
-import 'package:bookia/feature/auth/presentation/screen/login_view.dart';
-import 'package:bookia/feature/auth/presentation/widget/custom_log_social.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class RegisterView extends StatelessWidget {
-  const RegisterView({super.key});
+class ResetPasswordView extends StatelessWidget {
+  const ResetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +19,7 @@ class RegisterView extends StatelessWidget {
         backgroundColor: ColorApp.white,
         leading: CustomButtonBackGlobal(),
       ),
-      body: Padding(padding: const EdgeInsets.all(15.0), child: CustomBody()),
+      body: Padding(padding: const EdgeInsets.all(22.0), child: CustomBody()),
     );
   }
 }
@@ -32,30 +29,30 @@ class CustomBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(TextApp.titleRegis, style: TextstyleApp.black30W400),
-        Gap(30.0),
+        Text(TextApp.createNewPassword, style: TextstyleApp.black30W400),
+        Gap(10),
+        Text(
+          TextApp.bodyReset,
+          style: TextstyleApp.grey14W400.copyWith(fontSize: 16.0),
+        ),
+        Gap(32),
         CustomTextFromGlobal(hinttext: TextApp.username),
-        CustomTextFromGlobal(hinttext: TextApp.email),
-        CustomTextFromGlobal(hinttext: TextApp.password),
-        CustomTextFromGlobal(hinttext: TextApp.conpassword),
-        Gap(12.0),
+        CustomTextFromGlobal(hinttext: TextApp.enterPassword),
+        Gap(38),
         CustomElevatedButtonGlobal(
           onatp: () {},
           backgroundcolor: ColorApp.primery,
           colorTitle: ColorApp.white,
           title: TextApp.logIn,
         ),
-        Gap(20.0),
-        CustomLogSocial(title: TextApp.orRegister),
-        Gap(40.0),
+        Expanded(child: SizedBox()),
         CustomAnotherPageGlobal(
-          textone: TextApp.alreadyacount,
-          texttwo: TextApp.logNow,
-          ontap: () {
-            context.pushRepalceMent(LoginView());
-          },
+          textone: TextApp.notHaveAccount,
+          texttwo: TextApp.regisNow,
+          ontap: () {},
         ),
       ],
     );
