@@ -7,9 +7,15 @@ class CustomTextFromGlobal extends StatelessWidget {
     super.key,
     required this.hinttext,
     this.suffixIcon,
+    this.controller,
+    this.validator,
+    this.obscureText,
   });
   final String hinttext;
   final Widget? suffixIcon;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  final bool? obscureText;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,6 +23,9 @@ class CustomTextFromGlobal extends StatelessWidget {
       width: double.infinity,
       height: 56.0,
       child: TextFormField(
+        controller: controller,
+        validator: validator,
+        obscureText: obscureText ?? false,
         cursorColor: ColorApp.primery,
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
@@ -33,7 +42,11 @@ class CustomTextFromGlobal extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
           ),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorApp.border),
+            borderSide: BorderSide(color: ColorApp.primery),
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: ColorApp.red),
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),

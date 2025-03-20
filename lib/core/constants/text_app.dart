@@ -4,7 +4,10 @@ class TextApp {
   static const String bookia = "Bookia";
   static const String verify = "Verify";
   static const String email = "Email";
+  static const String reset = "Reset";
   static const String password = "Password";
+  static const String newpassword = "New Password";
+  static const String newconfigpassword = "New Config Password";
   static const String conpassword = "Config Password";
   static const String alreadyacount = "Already have an account?";
   static const String createNewPassword = "Create new password";

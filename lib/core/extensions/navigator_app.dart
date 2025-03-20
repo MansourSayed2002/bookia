@@ -11,5 +11,12 @@ extension NavigatorApp on BuildContext {
     ).pushReplacement(MaterialPageRoute(builder: (context) => pageRoute));
   }
 
+  removeUntile(pageRoute) {
+    Navigator.of(this).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) => pageRoute),
+      (route) => false,
+    );
+  }
+
   pop() => Navigator.of(this).pop();
 }
