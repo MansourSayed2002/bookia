@@ -8,18 +8,22 @@ class CustomElevatedButtonGlobal extends StatelessWidget {
     required this.onatp,
     required this.backgroundcolor,
     required this.title,
-    this.colorTitle,
+    this.style,
     this.colorborder,
+    this.width,
+    this.colorTitle,
   });
   final Function() onatp;
   final Color backgroundcolor;
+  final TextStyle? style;
   final Color? colorTitle;
   final Color? colorborder;
   final String title;
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: width,
       height: 56.0,
       child: ElevatedButton(
         onPressed: onatp,
@@ -32,7 +36,7 @@ class CustomElevatedButtonGlobal extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: TextstyleApp.black15W400.copyWith(color: colorTitle),
+          style: style ?? TextstyleApp.black15W400.copyWith(color: colorTitle),
         ),
       ),
     );

@@ -24,11 +24,7 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorApp.white,
-      appBar: AppBar(
-        backgroundColor: ColorApp.white,
-        leading: CustomButtonBackGlobal(),
-      ),
+      appBar: AppBar(leading: CustomButtonBackGlobal()),
       body: BlocProvider.value(
         value: RegisterCubit(),
         child: Padding(
@@ -50,6 +46,8 @@ class CustomBody extends StatelessWidget {
     return BlocListener<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state is RegisterSuccess) {
+          context.pop();
+          context.messageBar("Congratulation", Colors.green);
           log("success");
         } else if (state is RegisterError) {
           context.pop();

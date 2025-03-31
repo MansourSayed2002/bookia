@@ -1,3 +1,4 @@
+import 'package:bookia/core/class/local_storage.dart';
 import 'package:bookia/core/constants/image_app.dart';
 import 'package:bookia/core/constants/text_app.dart';
 import 'package:bookia/core/extensions/message_bar.dart';
@@ -9,11 +10,11 @@ import 'package:bookia/core/shared/custom_text_from_global.dart';
 import 'package:bookia/core/shared/loading_widget.dart';
 import 'package:bookia/core/theme/color_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
-import 'package:bookia/feature/Home/presentation/screen/home_screen.dart';
 import 'package:bookia/feature/auth/presentation/Cubit/login_cubit/login_cubit.dart';
 import 'package:bookia/feature/auth/presentation/screen/forget_password_view.dart';
 import 'package:bookia/feature/auth/presentation/screen/register_view.dart';
 import 'package:bookia/feature/auth/presentation/widget/custom_log_social.dart';
+import 'package:bookia/feature/main/presentation/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -25,11 +26,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorApp.white,
-      appBar: AppBar(
-        backgroundColor: ColorApp.white,
-        leading: CustomButtonBackGlobal(),
-      ),
+      appBar: AppBar(leading: CustomButtonBackGlobal()),
       body: BlocProvider.value(
         value: LoginCubit(),
         child: Padding(
@@ -50,7 +47,11 @@ class CustomBody extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          context.removeUntile(HomeScreen());
+          LocalStorage.saveData(
+            "token",
+            cubit.usersModel.data!.token.toString(),
+          );
+          context.removeUntile(MainScreen());
         } else if (state is LoginError) {
           context.pop();
           context.messageBar(state.message);

@@ -7,6 +7,11 @@ class TextstyleApp {
     fontWeight: FontWeight.w400,
     color: ColorApp.black,
   );
+  static TextStyle white20W400 = TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w400,
+    color: ColorApp.white,
+  );
   static TextStyle black30W400 = TextStyle(
     fontSize: 30.0,
     fontWeight: FontWeight.w400,

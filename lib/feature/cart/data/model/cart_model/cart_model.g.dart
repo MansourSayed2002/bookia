@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_model.dart';
+part of 'cart_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
+CartModel _$CartModelFromJson(Map<String, dynamic> json) => CartModel(
   data:
       json['data'] == null
           ? null
@@ -16,7 +16,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
   status: (json['status'] as num?)?.toInt(),
 );
 
-Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
+Map<String, dynamic> _$CartModelToJson(CartModel instance) => <String, dynamic>{
   'data': instance.data,
   'message': instance.message,
   'error': instance.error,

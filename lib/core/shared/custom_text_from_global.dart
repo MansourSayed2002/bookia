@@ -10,11 +10,13 @@ class CustomTextFromGlobal extends StatelessWidget {
     this.controller,
     this.validator,
     this.obscureText,
+    this.onChanged,
   });
   final String hinttext;
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
   final bool? obscureText;
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class CustomTextFromGlobal extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         validator: validator,
+        onChanged: onChanged,
         obscureText: obscureText ?? false,
         cursorColor: ColorApp.primery,
         decoration: InputDecoration(

@@ -13,7 +13,6 @@ class CongratulationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorApp.white,
       body: Padding(
         padding: const EdgeInsets.all(22.0),
         child: Column(

@@ -4,6 +4,7 @@ import 'package:bookia/core/class/api_connect.dart';
 import 'package:bookia/core/constants/enum/status_request.dart';
 import 'package:bookia/core/constants/link_app.dart';
 import 'package:bookia/feature/auth/data/model/request/auth_params_model.dart';
+import 'package:bookia/feature/auth/data/model/response/users_model/users_model.dart';
 
 class AuthUseCase {
   static register(AuthParamsModel user) async {
@@ -30,7 +31,7 @@ class AuthUseCase {
         data: login.toJson(),
       );
       if (response.statusCode == 200) {
-        return StatusRequest.success;
+        return UsersModel.fromJson(response.data);
       } else {
         return StatusRequest.failure;
       }

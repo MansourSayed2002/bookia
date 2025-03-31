@@ -39,6 +39,7 @@ class OnboardingView extends StatelessWidget {
                 backgroundcolor: ColorApp.primery,
                 colorTitle: ColorApp.white,
                 title: TextApp.logIn,
+                width: double.infinity,
                 onatp: () {
                   context.push(LoginView());
                 },
@@ -48,6 +49,7 @@ class OnboardingView extends StatelessWidget {
                 backgroundcolor: ColorApp.white,
                 colorborder: ColorApp.black,
                 title: TextApp.register,
+                width: double.infinity,
                 onatp: () {
                   context.push(RegisterView());
                 },

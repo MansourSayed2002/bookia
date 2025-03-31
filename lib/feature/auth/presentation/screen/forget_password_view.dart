@@ -20,11 +20,7 @@ class ForgetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorApp.white,
-      appBar: AppBar(
-        backgroundColor: ColorApp.white,
-        leading: CustomButtonBackGlobal(),
-      ),
+      appBar: AppBar(leading: CustomButtonBackGlobal()),
       body: BlocProvider.value(
         value: ForgetpasswordCubit(),
         child: Padding(

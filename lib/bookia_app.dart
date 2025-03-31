@@ -1,4 +1,5 @@
-import 'package:bookia/feature/intro/presentation/screen/splash_view.dart';
+import 'package:bookia/core/function/middleware.dart';
+import 'package:bookia/core/theme/theme_app.dart';
 import 'package:flutter/material.dart';
 
 class BookiaApp extends StatelessWidget {
@@ -7,9 +8,11 @@ class BookiaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: "dm"),
+      themeMode: ThemeMode.light,
+      darkTheme: ThemeApp.darkTheme,
+      theme: ThemeApp.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      home: middleWare(),
     );
   }
 }
