@@ -76,6 +76,7 @@ class CustomBody extends StatelessWidget {
               backgroundcolor: ColorApp.primery,
               colorTitle: ColorApp.white,
               title: TextApp.sendCode,
+              width: double.infinity,
             ),
             Spacer(),
             CustomAnotherPageGlobal(

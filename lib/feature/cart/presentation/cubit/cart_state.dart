@@ -13,3 +13,12 @@ final class CartError extends CartState {
   CartError({required this.message});
   final String message;
 }
+
+final class CheckOutLoading extends CartState {}
+
+final class CheckOutSuccess extends CartState {}
+
+final class CheckOutError extends CartState {
+  CheckOutError({required this.message});
+  final String message;
+}

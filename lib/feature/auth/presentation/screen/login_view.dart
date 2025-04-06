@@ -3,6 +3,7 @@ import 'package:bookia/core/constants/image_app.dart';
 import 'package:bookia/core/constants/text_app.dart';
 import 'package:bookia/core/extensions/message_bar.dart';
 import 'package:bookia/core/extensions/navigator_app.dart';
+import 'package:bookia/core/function/validation.dart';
 import 'package:bookia/core/shared/custom_another_page_global.dart';
 import 'package:bookia/core/shared/custom_button_back_global.dart';
 import 'package:bookia/core/shared/custom_elevated_button_global.dart';
@@ -67,11 +68,17 @@ class CustomBody extends StatelessWidget {
               CustomTextFromGlobal(
                 controller: cubit.email,
                 hinttext: TextApp.username,
+                validator: (value) {
+                  return validationField("email", 8, 40, value);
+                },
               ),
               CustomTextFromGlobal(
                 obscureText: cubit.isshow,
                 controller: cubit.password,
                 hinttext: TextApp.enterPassword,
+                validator: (value) {
+                  return validationField("numtext", 8, 40, value);
+                },
                 suffixIcon: IconButton(
                   onPressed: () {
                     cubit.isShow();

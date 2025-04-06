@@ -1,7 +1,11 @@
 import 'package:bookia/core/constants/text_app.dart';
+import 'package:bookia/core/extensions/message_bar.dart';
+import 'package:bookia/core/extensions/navigator_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
 import 'package:bookia/feature/cart/data/model/cart_model/cart_item.dart';
 import 'package:bookia/feature/cart/presentation/cubit/cart_cubit.dart';
+import 'package:bookia/feature/cart/presentation/screen/Confirme_order.dart';
+
 import 'package:bookia/feature/cart/presentation/widget/card_item_widegt.dart';
 import 'package:bookia/feature/cart/presentation/widget/custom_cart_check_order.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +27,7 @@ class CartScreen extends StatelessWidget {
             style: TextstyleApp.black30W400.copyWith(fontSize: 24.0),
           ),
         ),
+
         body: CustomBody(),
       ),
     );
@@ -36,7 +41,17 @@ class CustomBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: BlocBuilder<CartCubit, CartState>(
+      child: BlocConsumer<CartCubit, CartState>(
+        listener: (context, state) {
+          var cubit = context.read<CartCubit>();
+          if (state is CartError) {
+            context.messageBar(state.message);
+          } else if (state is CheckOutSuccess) {
+            context.push(
+              ConfirmeOrderScreen(checkOutUserModel: cubit.checkOutUserModel!),
+            );
+          }
+        },
         builder: (context, state) {
           var cubit = context.read<CartCubit>();
           List<CartItem> cartItems = cubit.cartModel?.data?.cartItems ?? [];
@@ -73,8 +88,10 @@ class CustomBody extends StatelessWidget {
                 ),
               ),
               CustomCartCheckOrder(
-                total: cubit.cartModel?.data?.total.toString() ?? "",
-                oncheckout: () {},
+                total: cubit.cartModel?.data?.total ?? "0",
+                oncheckout: () {
+                  cubit.checkOutOrder();
+                },
               ),
             ],
           );

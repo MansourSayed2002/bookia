@@ -17,4 +17,10 @@ class LinkApp {
   static const String profile = "profile";
   static const String search = "products-search";
   static const String updatePassword = "update-password";
+  static const String updateProfile = "update-profile";
+  static const String checkOut = "checkout";
+  static const String placeOrder = "place-order";
+  static const String governorates = "governorates";
+  static const String orderHistory = "order-history";
+  static const String onlyOrder = "order-history/";
 }

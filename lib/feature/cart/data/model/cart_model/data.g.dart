@@ -12,7 +12,7 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
-  total: json['total'] as dynamic,
+  total: json['total'],
   cartItems:
       (json['cart_items'] as List<dynamic>?)
           ?.map((e) => CartItem.fromJson(e as Map<String, dynamic>))

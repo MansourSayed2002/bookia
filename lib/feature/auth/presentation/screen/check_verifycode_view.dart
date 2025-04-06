@@ -79,11 +79,13 @@ class CustomBody extends StatelessWidget {
               backgroundcolor: ColorApp.primery,
               colorTitle: ColorApp.white,
               title: TextApp.verify,
+              width: double.infinity,
             ),
             Expanded(child: SizedBox()),
             CustomAnotherPageGlobal(
               textone: TextApp.notReceivedCode,
               texttwo: TextApp.resend,
+
               ontap: () {
                 cubit.verifyEmail();
               },

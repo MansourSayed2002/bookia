@@ -1,8 +1,12 @@
+import 'package:bookia/core/class/local_storage.dart';
 import 'package:bookia/core/constants/image_app.dart';
 import 'package:bookia/core/constants/text_app.dart';
 import 'package:bookia/core/extensions/navigator_app.dart';
 import 'package:bookia/core/theme/textstyle_app.dart';
+import 'package:bookia/feature/intro/presentation/screen/onboarding_view.dart';
+import 'package:bookia/feature/order/presentation/screen/order_screen.dart';
 import 'package:bookia/feature/profile/presentation/cubit/profile_cubit.dart';
+import 'package:bookia/feature/profile/presentation/screen/update_profile_screen.dart';
 import 'package:bookia/feature/update_pass/presentation/screen/update_password_screen.dart';
 import 'package:bookia/feature/profile/presentation/widget/card_item_widget.dart';
 import 'package:bookia/feature/profile/presentation/widget/profile_info_widget.dart';
@@ -24,7 +28,13 @@ class ProfileScreen extends StatelessWidget {
           style: TextstyleApp.black30W400.copyWith(fontSize: 24),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: SvgPicture.asset(IconApp.logOut)),
+          IconButton(
+            onPressed: () {
+              LocalStorage.sharedPreferences.clear();
+              context.removeUntile(OnboardingView());
+            },
+            icon: SvgPicture.asset(IconApp.logOut),
+          ),
         ],
       ),
       body: BlocProvider.value(
@@ -40,29 +50,50 @@ class CustomBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ProfileInfoWidget(),
-        Gap(25.0),
-        Padding(
-          padding: EdgeInsets.only(left: 16.0, right: 24.0),
-          child: Column(
+    return BlocBuilder<ProfileCubit, ProfileState>(
+      builder:
+          (context, state) => Column(
             children: [
-              CardItemWidget(onPressed: () {}, title: TextApp.myOrder),
-              CardItemWidget(onPressed: () {}, title: TextApp.editProfile),
-              CardItemWidget(
-                onPressed: () {
-                  context.push(UpdatePasswordView());
-                },
-                title: TextApp.resetPassword,
+              ProfileInfoWidget(),
+              Gap(25.0),
+              Padding(
+                padding: EdgeInsets.only(left: 16.0, right: 24.0),
+                child: Column(
+                  children: [
+                    CardItemWidget(
+                      onPressed: () {
+                        context.push(OrderScreen());
+                      },
+                      title: TextApp.myOrder,
+                    ),
+                    CardItemWidget(
+                      onPressed: () {
+                        context.push(
+                          UpdateProfileScreen(
+                            profileModel:
+                                context.read<ProfileCubit>().profileModel!,
+                          ),
+                        );
+                      },
+                      title: TextApp.editProfile,
+                    ),
+                    CardItemWidget(
+                      onPressed: () {
+                        context.push(UpdatePasswordView());
+                      },
+                      title: TextApp.resetPassword,
+                    ),
+                    CardItemWidget(onPressed: () {}, title: TextApp.fAQ),
+                    CardItemWidget(onPressed: () {}, title: TextApp.contactUs),
+                    CardItemWidget(
+                      onPressed: () {},
+                      title: TextApp.privacyTerms,
+                    ),
+                  ],
+                ),
               ),
-              CardItemWidget(onPressed: () {}, title: TextApp.fAQ),
-              CardItemWidget(onPressed: () {}, title: TextApp.contactUs),
-              CardItemWidget(onPressed: () {}, title: TextApp.privacyTerms),
             ],
           ),
-        ),
-      ],
     );
   }
 }

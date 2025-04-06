@@ -16,19 +16,29 @@ class CountWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        FloatingActionButton.small(
-          backgroundColor: ColorApp.white,
-          elevation: 0.0,
+        // FloatingActionButton.small(
+        //   heroTag: "add",
+        //   backgroundColor: ColorApp.white,
+        //   elevation: 0.0,
+        //   onPressed: onadd,
+        //   child: Icon(Icons.add, color: ColorApp.dark),
+        // ),
+        TextButton(
           onPressed: onadd,
           child: Icon(Icons.add, color: ColorApp.dark),
         ),
         Text(quantity, style: TextstyleApp.black15W400),
-        FloatingActionButton.small(
-          backgroundColor: ColorApp.white,
-          elevation: 0.0,
+        TextButton(
           onPressed: onremove,
           child: Icon(Icons.remove, color: ColorApp.dark),
         ),
+        // FloatingActionButton.small(
+        //   heroTag: "remove",
+        //   backgroundColor: ColorApp.white,
+        //   elevation: 0.0,
+        //   onPressed: onremove,
+        //   child: Icon(Icons.remove, color: ColorApp.dark),
+        // ),
       ],
     );
   }

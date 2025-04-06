@@ -83,6 +83,7 @@ class CustomBody extends StatelessWidget {
               backgroundcolor: ColorApp.primery,
               colorTitle: ColorApp.white,
               title: TextApp.reset,
+              width: double.infinity,
             ),
           ],
         ),

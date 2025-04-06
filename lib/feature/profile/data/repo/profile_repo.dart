@@ -23,4 +23,22 @@ class ProfileRepo {
       return StatusRequest.failure;
     }
   }
+
+  static updateProfile(name, address, phone) async {
+    try {
+      var response = await ApiConnect.postData(
+        LinkApp.updateProfile,
+        data: {"name": name, "address": address, "phone": phone},
+        headers: {'Authorization': 'Bearer ${LocalStorage.getData('token')}'},
+      );
+      if (response.statusCode == 200) {
+        return StatusRequest.success;
+      } else {
+        return StatusRequest.failure;
+      }
+    } catch (e) {
+      log(e.toString());
+      return StatusRequest.failure;
+    }
+  }
 }

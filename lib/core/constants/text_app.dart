@@ -3,12 +3,18 @@ class TextApp {
   static const String logIn = "Login";
   static const String bookia = "Bookia";
   static const String verify = "Verify";
+  static const String name = "Name";
+  static const String phone = "Phone";
+  static const String address = "Address";
+  static const String confirmOrder = "Confirm Order";
   static const String email = "Email";
   static const String reset = "Reset";
   static const String wishList = "WishList";
   static const String mycart = "MyCart";
   static const String buy = "Buy";
   static const String search = "Search";
+  static const String infoUser = "Info User";
+  static const String infoOrder = "Information Order";
   static const String myOrder = "My Orders";
   static const String editProfile = "Edit Profile";
   static const String resetPassword = "Reset Password";
@@ -20,10 +26,12 @@ class TextApp {
   static const String total = "Total:";
   static const String password = "Password";
   static const String newpassword = "New Password";
+  static const String historyOrder = "History Order";
   static const String currentpassword = "Current Password";
   static const String newconfigpassword = "New Config Password";
-
   static const String updatepassword = "Update Password";
+  static const String save = "Save";
+  static const String confirme = "Confirme";
   static const String conpassword = "Config Password";
   static const String alreadyacount = "Already have an account?";
   static const String createNewPassword = "Create new password";
@@ -59,4 +67,6 @@ class TextApp {
   static const String orLogIn = " Or Login with";
   static const String orRegister = " Or Register with";
   static const String someThingIsWrong = "Some thing is wrong";
+  static const String updateProfile = "Update Profile";
+  static const String selectGovernorate = 'Select Your Governorate';
 }
