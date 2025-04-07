@@ -24,7 +24,7 @@ class LoginCubit extends Cubit<LoginState> {
       AuthParamsModel(email: email.text, password: password.text),
     );
     if (response is StatusRequest) {
-      emit(LoginError("Something went wrong"));
+      emit(LoginError("Something is wrong"));
     } else {
       usersModel = response;
       emit(LoginSuccess());
